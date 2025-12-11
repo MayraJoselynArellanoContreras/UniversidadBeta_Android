@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BD_SQLite_2025</string>
+    <string name="txt_btn_altas">AGREGAR</string>
+    <string name="txt_btn_bajas">ELIMINAR</string>
+    <string name="txt_btn_cambios">MODIFICAR</string>
+    <string name="txt_btn_consultas">CONSULTAR</string>
+    <string name="txt_titulo_altas">Agregar alumno</string>
+</resources>

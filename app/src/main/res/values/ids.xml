@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recyclerEventos" type="id" />
+    <item name="btnLimpiar" type="id" />
+    <item name="btnBuscar" type="id" />
+    <item name="btnEliminar" type="id" />
+    <item name="btnEditar" type="id" />
+    <item name="btnAgregar" type="id" />
+    <item name="spnTipoEvento" type="id" />
+    <item name="edtDescripcion" type="id" />
+    <item name="edtMetaRecaudacion" type="id" />
+    <item name="edtLugar" type="id" />
+    <item name="edtFecha" type="id" />
+    <item name="edtNombreEvento" type="id" />
+</resources>
