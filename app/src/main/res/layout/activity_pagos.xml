@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEB99"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Encabezado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00CC99"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pago de Garantías"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Buscar Garantía -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar Garantía"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID Garantía:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/txtIdGarantia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Ingrese ID de garantía"
+                android:inputType="number"
+                android:background="@android:color/white"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btnBuscarGarantia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- Información de Garantía -->
+        <LinearLayout
+            android:id="@+id/layoutInfoGarantia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txtInfoGarantia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Garantía encontrada"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/txtSaldoInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saldo pendiente: $0.00"
+                android:textSize="14sp"
+                android:textColor="#666666" />
+        </LinearLayout>
+
+        <!-- Datos del Pago -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Datos del Pago"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Monto -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monto:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/txtMontoPago"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="0.00"
+                android:inputType="numberDecimal"
+                android:background="@android:color/white"
+                android:padding="12dp" />
+        </LinearLayout>
+
+        <!-- Fecha -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/txtFechaPago"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="dd/mm/aaaa"
+                android:inputType="date"
+                android:background="@android:color/white"
+                android:padding="12dp" />
+        </LinearLayout>
+
+        <!-- Observaciones -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Observaciones"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/txtObservaciones"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Ingrese observaciones del pago..."
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:background="@android:color/white"
+            android:padding="12dp" />
+
+        <!-- Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btnRegistrarPago"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Registrar"
+                android:backgroundTint="#00CC99"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="8dp"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btnEliminarPago"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Eliminar"
+                android:backgroundTint="#F44336"
+                android:textColor="@android:color/white"
+                android:enabled="false"
+                android:layout_marginHorizontal="4dp"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btnVerHistorial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Historial"
+                android:layout_marginStart="8dp"
+                android:padding="12dp" />
+        </LinearLayout>
+
+        <!-- Volver -->
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:backgroundTint="#66CC00"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
+            android:padding="12dp" />
+
+        <!-- Título Tabla -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tabla de Pagos"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPagos"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:padding="8dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00CCCC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Encabezado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registro de Donativo"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ID Donativo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID Donativo:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/txtIdDonativo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:background="@android:color/white"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Buscar Donador -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar Donador"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/txtBuscarDonador"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="ID o nombre"
+                android:background="@android:color/white"
+                android:padding="8dp" />
+
+            <Button
+                android:id="@+id/btnBuscarDonador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Información del Donador -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/txtNombreDonador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del donador"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/txtIdDonador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: "
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Fechas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha Garantía"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/txtFechaGarantia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="dd/mm/aaaa"
+                    android:inputType="date"
+                    android:background="@android:color/white"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha Registro"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/txtFechaRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="dd/mm/aaaa"
+                    android:inputType="date"
+                    android:background="@android:color/white"
+                    android:padding="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Cantidades -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cantidad Garantizada"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/txtCantidadGarantizada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="0.00"
+                    android:inputType="numberDecimal"
+                    android:background="@android:color/white"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cantidad Recibida"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/txtCantidadRecibida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="0.00"
+                    android:inputType="numberDecimal"
+                    android:background="@android:color/white"
+                    android:padding="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Método de Pago -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Método:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerMetodo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Número de Pagos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N° Pagos:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerNumPagos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Tarjeta de Crédito -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/txtNumTarjeta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Número (13-19 dígitos)"
+                android:inputType="number"
+                android:enabled="false"
+                android:background="@color/gray_light"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Corporación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Corporación:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerCorporacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Observaciones -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Observaciones:"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/txtObservaciones"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@android:color/white"
+            android:padding="8dp"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botones de Acción -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Registrar"
+                android:backgroundTint="@color/green"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnLimpiar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Limpiar"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnVolver"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Volver"
+                android:backgroundTint="@color/blue" />
+        </LinearLayout>
+
+        <!-- Historial de Donativos -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historial de Donativos"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Tabla/Lista de donativos -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDonativos"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botones de gestión -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Editar"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Eliminar"
+                android:backgroundTint="@color/red"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnGestionarPagos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pagos" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

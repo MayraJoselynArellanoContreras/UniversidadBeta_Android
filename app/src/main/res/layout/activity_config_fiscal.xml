@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6B7280">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Título -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E3A8A"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONFIGURACIÓN DE AÑOS FISCALES"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif" />
+        </LinearLayout>
+
+        <!-- Nuevo Año Fiscal -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:text="Nuevo Año Fiscal"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <!-- Campos de entrada -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ID y Botón Activar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID:"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/txtID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:enabled="false"
+                    android:hint="ID" />
+
+                <Button
+                    android:id="@+id/btnActivar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Activar"
+                    android:layout_marginStart="16dp"
+                    android:enabled="false" />
+            </LinearLayout>
+
+            <!-- Nombre -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre:"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/txtNombre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Ej: 2024-2025"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <!-- Fecha de Inicio y Botón Editar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inicio:"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/txtFechaInicio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="YYYY-MM-DD"
+                    android:inputType="date" />
+
+                <Button
+                    android:id="@+id/btnEditar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Editar"
+                    android:layout_marginStart="16dp"
+                    android:enabled="false" />
+            </LinearLayout>
+
+            <!-- Fecha de Fin y Botón Eliminar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fin:"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/txtFechaFin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="YYYY-MM-DD"
+                    android:inputType="date" />
+
+                <Button
+                    android:id="@+id/btnEliminar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eliminar"
+                    android:layout_marginStart="16dp"
+                    android:enabled="false" />
+            </LinearLayout>
+
+            <!-- Estado -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estado:"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/txtEstado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnAgregar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Agregar"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Lista de Años Fiscales -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="8dp"
+            android:text="Años Fiscales Existentes"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <!-- Tabla/Lista de años fiscales -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAnios"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="16dp"
+            android:background="@android:color/white" />
+
+        <!-- Botón Volver -->
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:layout_gravity="end"
+            android:layout_margin="16dp"
+            android:drawableStart="@android:drawable/ic_menu_revert" />
+    </LinearLayout>
+</ScrollView>

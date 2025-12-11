@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Encabezado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="16dp"
+            android:background="#1E3A8A"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gestión de Donadores"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Formulario de Registro -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro de Donador"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- ID Donador -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:paddingHorizontal="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID Donador:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/txtIdDonador"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Presiona Generar ID"
+                android:textColor="@color/text_secondary"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnGenerarId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generar ID"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/blue"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- Nombre -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp"
+            android:paddingHorizontal="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre Completo *"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese nombre completo"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Dirección -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp"
+            android:paddingHorizontal="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dirección *"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/txtDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Dirección completa"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Categoría -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:paddingHorizontal="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categoría *"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerCategoria"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Año Graduación (condicional) -->
+        <LinearLayout
+            android:id="@+id/layoutAnioGraduacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:paddingHorizontal="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Año Graduación:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/txtAnioGraduacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="YYYY"
+                android:inputType="number"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Teléfono -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp"
+            android:paddingHorizontal="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teléfono *"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/txtTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="(000) 000-0000"
+                android:inputType="phone"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Email -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp"
+            android:paddingHorizontal="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Correo Electrónico"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/txtCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ejemplo@dominio.com"
+                android:inputType="textEmailAddress"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Corporación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:paddingHorizontal="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Corporación:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerCorporacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Cónyuge -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"
+            android:paddingHorizontal="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del Cónyuge"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/txtConyuge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Opcional"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Botones de Acción -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btnAgregar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Agregar"
+                android:backgroundTint="@color/green"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="8dp"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Editar"
+                android:backgroundTint="@color/blue"
+                android:textColor="@android:color/white"
+                android:enabled="false"
+                android:layout_marginHorizontal="4dp"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btnLimpiar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Limpiar"
+                android:layout_marginStart="8dp"
+                android:padding="12dp" />
+        </LinearLayout>
+
+        <!-- Búsqueda -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar Donador"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:paddingHorizontal="8dp">
+
+            <EditText
+                android:id="@+id/txtBuscar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:hint="Nombre, ID o teléfono"
+                android:background="@android:color/white"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btnBuscar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- Lista de Donadores -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lista de Donadores"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- RecyclerView para la tabla -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDonadores"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:padding="8dp" />
+
+        <!-- Botones Inferiores -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btnVolver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volver"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="16dp"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eliminar"
+                android:backgroundTint="@color/red"
+                android:textColor="@android:color/white"
+                android:padding="12dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
