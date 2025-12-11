@@ -191,7 +191,7 @@ public class VoluntariosActivity extends AppCompatActivity {
 
         new Thread(() -> {
             Voluntario nuevoVoluntario = new Voluntario(
-                    0, // ID será auto-generado
+                    0,
                     nombre,
                     email.isEmpty() ? null : email,
                     telefonoLimpio,
@@ -358,7 +358,7 @@ public class VoluntariosActivity extends AppCompatActivity {
         finish();
     }
 
-    // CLASE INTERNA DEL ADAPTER (igual que en EventosActivity)
+
     class VoluntariosAdapter extends RecyclerView.Adapter<VoluntariosAdapter.VoluntarioViewHolder> {
         private List<Voluntario> voluntarios;
 

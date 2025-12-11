@@ -10,7 +10,7 @@ public class Voluntario {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "idVoluntario")
-    public int idVoluntario;
+    public int idVoluntario = 0; // Valor por defecto 0
 
     @NonNull
     @ColumnInfo(name = "nombre")
@@ -29,15 +29,15 @@ public class Voluntario {
     public String fechaRegistro;
 
     @ColumnInfo(name = "estudiante")
-    public boolean estudiante;
+    public boolean estudiante = false;
 
     @ColumnInfo(name = "activo")
-    public boolean activo;
+    public boolean activo = true;
 
     @ColumnInfo(name = "observaciones")
     public String observaciones;
 
-    // Constructor completo
+    // Constructor único que Room puede usar
     public Voluntario(int idVoluntario, @NonNull String nombre, String email,
                       String telefono, String direccion, String fechaRegistro,
                       boolean estudiante, boolean activo, String observaciones) {
@@ -52,21 +52,7 @@ public class Voluntario {
         this.observaciones = observaciones;
     }
 
-    // Constructor para nuevo voluntario (sin ID)
-    public Voluntario(@NonNull String nombre, String email, String telefono,
-                      String direccion, String fechaRegistro, boolean estudiante,
-                      boolean activo, String observaciones) {
-        this.nombre = nombre;
-        this.email = email;
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.fechaRegistro = fechaRegistro;
-        this.estudiante = estudiante;
-        this.activo = activo;
-        this.observaciones = observaciones;
-    }
-
-    // Getters (opcionales pero útiles)
+    // Getters
     public int getIdVoluntario() { return idVoluntario; }
     @NonNull public String getNombre() { return nombre; }
     public String getEmail() { return email; }
