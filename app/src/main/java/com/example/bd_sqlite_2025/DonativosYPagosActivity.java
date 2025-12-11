@@ -21,16 +21,14 @@ public class DonativosYPagosActivity extends AppCompatActivity {
         btnGarantias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DonativosYPagosActivity.this,
-                        "Garantías - En desarrollo", Toast.LENGTH_SHORT).show();
+
             }
         });
 
         btnDonativos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DonativosYPagosActivity.this,
-                        "Donativos - En desarrollo", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(DonativosYPagosActivity.this, DonativoActivity.class));
             }
         });
 
@@ -43,12 +41,9 @@ public class DonativosYPagosActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this, MenuPrincipalActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 }
