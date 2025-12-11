@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,7 +14,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
-import com.example.bd_sqlite_2025.EventosActivity;
+
 import db.UniversidadBeta;
 import entities.Evento;
 import controlers.EventoDAO;
@@ -42,8 +43,9 @@ public class EventosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_eventos);
 
         // 1. Base de datos
-        db = UniversidadBeta.getAppDatabase(getApplicationContext());
+        db = UniversidadBeta.getAppDatabase(this);
         eventoDAO = db.eventoDAO();
+
 
         // 2. PRIMERO inicializa TODAS las vistas
         inicializarVistas();           // ← aquí se hace findViewById del Spinner
@@ -359,8 +361,4 @@ public class EventosActivity extends AppCompatActivity {
         btnEliminar.setEnabled(true);
     }
 
-    @Override
-    public void onBackPressed() {
-        finish();
-    }
 }
