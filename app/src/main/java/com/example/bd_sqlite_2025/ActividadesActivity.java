@@ -68,9 +68,8 @@ public class ActividadesActivity extends AppCompatActivity {
         // Aquí puedes abrir la actividad de Voluntarios
         Toast.makeText(this, "Abriendo gestión de Voluntarios", Toast.LENGTH_SHORT).show();
 
-        // Descomentar cuando tengas la actividad de Voluntarios
-        // Intent intent = new Intent(this, VoluntariosActivity.class);
-        // startActivity(intent);
+        Intent intent = new Intent(this, VoluntariosActivity.class);
+        startActivity(intent);
     }
 
     private void volverMenuPrincipal() {
