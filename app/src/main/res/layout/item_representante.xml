@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="12dp"
+    android:layout_marginBottom="1dp">
+
+    <!-- Fila 1: ID y Nombre -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/txtIdRepresentanteItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID-001"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:id="@+id/txtNombreItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nombre Representante"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <!-- Fila 2: Generación y Teléfono -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gen. 2020"
+            android:textSize="14sp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:background="#E3F2FD"
+            android:textColor="#1976D2" />
+
+        <TextView
+            android:id="@+id/txtTelefonoItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tel: 000-0000"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:gravity="end" />
+    </LinearLayout>
+
+    <!-- Fila 3: Email -->
+    <TextView
+        android:id="@+id/txtEmailItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="email@ejemplo.com"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+</LinearLayout>

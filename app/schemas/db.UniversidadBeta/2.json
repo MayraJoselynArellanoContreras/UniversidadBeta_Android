@@ -1,0 +1,792 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "22355011f2e658ed3e1d9467fa16b801",
+    "entities": [
+      {
+        "tableName": "AnioFiscal",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idAnioFiscal` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `fechaInicio` TEXT NOT NULL, `fechaFin` TEXT NOT NULL, `activo` INTEGER, `fechaCreacion` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idAnioFiscal",
+            "columnName": "idAnioFiscal",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fechaInicio",
+            "columnName": "fechaInicio",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fechaFin",
+            "columnName": "fechaFin",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activo",
+            "columnName": "activo",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fechaCreacion",
+            "columnName": "fechaCreacion",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idAnioFiscal"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "CategoriaDonador",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCategoria` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `descripcion` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idCategoria",
+            "columnName": "idCategoria",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descripcion",
+            "columnName": "descripcion",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idCategoria"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "CirculoDonador",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCirculo` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `descripcion` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idCirculo",
+            "columnName": "idCirculo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descripcion",
+            "columnName": "descripcion",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idCirculo"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Corporacion",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCorporacion` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `direccion` TEXT, `telefono` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idCorporacion",
+            "columnName": "idCorporacion",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "direccion",
+            "columnName": "direccion",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "telefono",
+            "columnName": "telefono",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idCorporacion"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Donador",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idDonador` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `direccion` TEXT, `telefono` TEXT, `email` TEXT, `idCategoria` INTEGER, `anioGraduacion` INTEGER, `idCorporacion` INTEGER, `conyuge` TEXT, `idDonadorTemp` TEXT, FOREIGN KEY(`idCategoria`) REFERENCES `CategoriaDonador`(`idCategoria`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`idCorporacion`) REFERENCES `Corporacion`(`idCorporacion`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idDonador",
+            "columnName": "idDonador",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "direccion",
+            "columnName": "direccion",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "telefono",
+            "columnName": "telefono",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idCategoria",
+            "columnName": "idCategoria",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "anioGraduacion",
+            "columnName": "anioGraduacion",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idCorporacion",
+            "columnName": "idCorporacion",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "conyuge",
+            "columnName": "conyuge",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idDonadorTemp",
+            "columnName": "idDonadorTemp",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idDonador"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_Donador_idCategoria",
+            "unique": false,
+            "columnNames": [
+              "idCategoria"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Donador_idCategoria` ON `${TABLE_NAME}` (`idCategoria`)"
+          },
+          {
+            "name": "index_Donador_idCorporacion",
+            "unique": false,
+            "columnNames": [
+              "idCorporacion"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Donador_idCorporacion` ON `${TABLE_NAME}` (`idCorporacion`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "CategoriaDonador",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "idCategoria"
+            ],
+            "referencedColumns": [
+              "idCategoria"
+            ]
+          },
+          {
+            "table": "Corporacion",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "idCorporacion"
+            ],
+            "referencedColumns": [
+              "idCorporacion"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "RepresentanteClase",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idRepresentante` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `email` TEXT, `telefono` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idRepresentante",
+            "columnName": "idRepresentante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "telefono",
+            "columnName": "telefono",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idRepresentante"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "DonadoresRepresentante",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idDonador` INTEGER NOT NULL, `idRepresentante` INTEGER NOT NULL, `estatus` INTEGER, PRIMARY KEY(`idDonador`, `idRepresentante`), FOREIGN KEY(`idDonador`) REFERENCES `Donador`(`idDonador`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`idRepresentante`) REFERENCES `RepresentanteClase`(`idRepresentante`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idDonador",
+            "columnName": "idDonador",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idRepresentante",
+            "columnName": "idRepresentante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estatus",
+            "columnName": "estatus",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "idDonador",
+            "idRepresentante"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_DonadoresRepresentante_idRepresentante",
+            "unique": false,
+            "columnNames": [
+              "idRepresentante"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_DonadoresRepresentante_idRepresentante` ON `${TABLE_NAME}` (`idRepresentante`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Donador",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "idDonador"
+            ],
+            "referencedColumns": [
+              "idDonador"
+            ]
+          },
+          {
+            "table": "RepresentanteClase",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "idRepresentante"
+            ],
+            "referencedColumns": [
+              "idRepresentante"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Garantia",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idGarantia` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `descripcion` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idGarantia",
+            "columnName": "idGarantia",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descripcion",
+            "columnName": "descripcion",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idGarantia"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Donativo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idDonativo` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `monto` REAL NOT NULL, `fecha` TEXT NOT NULL, `idDonador` INTEGER NOT NULL, `idGarantia` INTEGER, FOREIGN KEY(`idDonador`) REFERENCES `Donador`(`idDonador`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`idGarantia`) REFERENCES `Garantia`(`idGarantia`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idDonativo",
+            "columnName": "idDonativo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "monto",
+            "columnName": "monto",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fecha",
+            "columnName": "fecha",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idDonador",
+            "columnName": "idDonador",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idGarantia",
+            "columnName": "idGarantia",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idDonativo"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_Donativo_idDonador",
+            "unique": false,
+            "columnNames": [
+              "idDonador"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Donativo_idDonador` ON `${TABLE_NAME}` (`idDonador`)"
+          },
+          {
+            "name": "index_Donativo_idGarantia",
+            "unique": false,
+            "columnNames": [
+              "idGarantia"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Donativo_idGarantia` ON `${TABLE_NAME}` (`idGarantia`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Donador",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "idDonador"
+            ],
+            "referencedColumns": [
+              "idDonador"
+            ]
+          },
+          {
+            "table": "Garantia",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "idGarantia"
+            ],
+            "referencedColumns": [
+              "idGarantia"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Pago",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idPago` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `monto` REAL NOT NULL, `fecha` TEXT NOT NULL, `idDonativo` INTEGER NOT NULL, FOREIGN KEY(`idDonativo`) REFERENCES `Donativo`(`idDonativo`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idPago",
+            "columnName": "idPago",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "monto",
+            "columnName": "monto",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fecha",
+            "columnName": "fecha",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idDonativo",
+            "columnName": "idDonativo",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idPago"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_Pago_idDonativo",
+            "unique": false,
+            "columnNames": [
+              "idDonativo"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_Pago_idDonativo` ON `${TABLE_NAME}` (`idDonativo`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Donativo",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "idDonativo"
+            ],
+            "referencedColumns": [
+              "idDonativo"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Evento",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idEvento` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `descripcion` TEXT, `fecha` TEXT NOT NULL, `lugar` TEXT NOT NULL, `tipo` TEXT NOT NULL, `metaRecaudacion` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idEvento",
+            "columnName": "idEvento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descripcion",
+            "columnName": "descripcion",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fecha",
+            "columnName": "fecha",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lugar",
+            "columnName": "lugar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipo",
+            "columnName": "tipo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metaRecaudacion",
+            "columnName": "metaRecaudacion",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idEvento"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "AsistenteEvento",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idEvento` INTEGER NOT NULL, `idDonador` INTEGER NOT NULL, `idAsistente` INTEGER NOT NULL, PRIMARY KEY(`idEvento`, `idDonador`), FOREIGN KEY(`idEvento`) REFERENCES `Evento`(`idEvento`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`idDonador`) REFERENCES `Donador`(`idDonador`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idEvento",
+            "columnName": "idEvento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idDonador",
+            "columnName": "idDonador",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idAsistente",
+            "columnName": "idAsistente",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "idEvento",
+            "idDonador"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_AsistenteEvento_idDonador",
+            "unique": false,
+            "columnNames": [
+              "idDonador"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_AsistenteEvento_idDonador` ON `${TABLE_NAME}` (`idDonador`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Evento",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "idEvento"
+            ],
+            "referencedColumns": [
+              "idEvento"
+            ]
+          },
+          {
+            "table": "Donador",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "idDonador"
+            ],
+            "referencedColumns": [
+              "idDonador"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Usuarios",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idUsuario` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `usuario` TEXT NOT NULL, `password` TEXT NOT NULL, `rol` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idUsuario",
+            "columnName": "idUsuario",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "usuario",
+            "columnName": "usuario",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rol",
+            "columnName": "rol",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idUsuario"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Voluntario",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idVoluntario` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `email` TEXT, `telefono` TEXT, `direccion` TEXT, `fechaRegistro` TEXT, `estudiante` INTEGER NOT NULL, `activo` INTEGER NOT NULL, `observaciones` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idVoluntario",
+            "columnName": "idVoluntario",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "telefono",
+            "columnName": "telefono",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "direccion",
+            "columnName": "direccion",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fechaRegistro",
+            "columnName": "fechaRegistro",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "estudiante",
+            "columnName": "estudiante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activo",
+            "columnName": "activo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "observaciones",
+            "columnName": "observaciones",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "idVoluntario"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '22355011f2e658ed3e1d9467fa16b801')"
+    ]
+  }
+}
