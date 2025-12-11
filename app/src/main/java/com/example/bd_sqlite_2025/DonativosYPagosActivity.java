@@ -21,7 +21,7 @@ public class DonativosYPagosActivity extends AppCompatActivity {
         btnGarantias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(DonativosYPagosActivity.this, GarantiasActivity.class));
             }
         });
 

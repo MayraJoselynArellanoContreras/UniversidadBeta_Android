@@ -24,18 +24,17 @@ import controlers.VoluntarioDAO;
 
 public class VoluntariosActivity extends AppCompatActivity {
 
-    // 1. DECLARACIÓN DE VARIABLES
     private EditText edtNombre, edtTelefono, edtEmail, edtDireccion, edtFechaRegistro, edtObservaciones;
     private CheckBox chkEstudiante, chkActivo;
     private Button btnAgregar, btnEditar, btnEliminar, btnBuscar, btnLimpiar, btnVolver;
     private RecyclerView recyclerVoluntarios;
 
-    // Variables para datos
+
     private int voluntarioSeleccionadoId = -1;
     private List<Voluntario> listaVoluntarios = new ArrayList<>();
     private VoluntariosAdapter voluntariosAdapter;
 
-    // Base de datos
+
     private UniversidadBeta db;
     private VoluntarioDAO voluntarioDAO;
 
@@ -44,27 +43,26 @@ public class VoluntariosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voluntarios);
 
-        // 1. Base de datos
+
         db = UniversidadBeta.getAppDatabase(getApplicationContext());
         voluntarioDAO = db.voluntarioDAO();
 
-        // 2. Inicializar TODAS las vistas
+
         inicializarVistas();
 
-        // 3. Configurar RecyclerView
+
         configurarRecyclerView();
 
-        // 4. Cargar datos y configurar
+
         cargarVoluntariosDesdeBD();
         configurarFechaActual();
         configurarListeners();
 
-        // 5. Limpiar campos inicialmente
         limpiarCampos();
     }
 
     private void inicializarVistas() {
-        // TODOS LOS findViewById PRIMERO
+
         edtNombre = findViewById(R.id.edtNombre);
         edtTelefono = findViewById(R.id.edtTelefono);
         edtEmail = findViewById(R.id.edtEmail);
@@ -104,7 +102,7 @@ public class VoluntariosActivity extends AppCompatActivity {
         btnLimpiar.setOnClickListener(v -> limpiarCampos());
         btnVolver.setOnClickListener(v -> finish());
 
-        // Click en campo de fecha
+
         edtFechaRegistro.setOnClickListener(v -> {
             // Aquí podrías implementar un DatePickerDialog
             Toast.makeText(this, "Formato: YYYY-MM-DD", Toast.LENGTH_SHORT).show();
@@ -129,13 +127,13 @@ public class VoluntariosActivity extends AppCompatActivity {
         String direccion = edtDireccion.getText().toString().trim();
         String fecha = edtFechaRegistro.getText().toString().trim();
 
-        // Validar nombre
+
         if (nombre.isEmpty()) {
             Toast.makeText(this, "El nombre es obligatorio", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        // Validar teléfono
+
         if (telefono.isEmpty()) {
             Toast.makeText(this, "El teléfono es obligatorio", Toast.LENGTH_SHORT).show();
             return false;
@@ -147,25 +145,25 @@ public class VoluntariosActivity extends AppCompatActivity {
             return false;
         }
 
-        // Validar email (opcional pero si se ingresa debe ser válido)
+
         if (!email.isEmpty() && !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Toast.makeText(this, "Formato de email inválido", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        // Validar dirección
+
         if (direccion.isEmpty()) {
             Toast.makeText(this, "La dirección es obligatoria", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        // Validar fecha
+
         if (fecha.isEmpty()) {
             Toast.makeText(this, "La fecha de registro es obligatoria", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        // Validar formato de fecha YYYY-MM-DD
+
         if (!fecha.matches("\\d{4}-\\d{2}-\\d{2}")) {
             Toast.makeText(this, "Formato de fecha inválido (YYYY-MM-DD)", Toast.LENGTH_SHORT).show();
             return false;
@@ -186,7 +184,7 @@ public class VoluntariosActivity extends AppCompatActivity {
         boolean activo = chkActivo.isChecked();
         String observaciones = edtObservaciones.getText().toString().trim();
 
-        // Limpiar teléfono (solo números)
+
         String telefonoLimpio = telefono.replaceAll("[^0-9]", "");
 
         new Thread(() -> {
@@ -229,7 +227,7 @@ public class VoluntariosActivity extends AppCompatActivity {
         boolean activo = chkActivo.isChecked();
         String observaciones = edtObservaciones.getText().toString().trim();
 
-        // Limpiar teléfono (solo números)
+
         String telefonoLimpio = telefono.replaceAll("[^0-9]", "");
 
         new Thread(() -> {
@@ -326,7 +324,7 @@ public class VoluntariosActivity extends AppCompatActivity {
         if (chkEstudiante != null) chkEstudiante.setChecked(false);
         if (chkActivo != null) chkActivo.setChecked(true);
 
-        // Restaurar fecha actual
+
         configurarFechaActual();
 
         voluntarioSeleccionadoId = -1;

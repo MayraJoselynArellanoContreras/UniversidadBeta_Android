@@ -17,14 +17,14 @@ public class ActivityConfiguraciones extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_configuraciones); // Asegúrate que el XML se llame así
+        setContentView(R.layout.activity_configuraciones);
 
-        // Inicializar botones
+
         btnCirculo = findViewById(R.id.btnCirculo);
         btnConfigFiscal = findViewById(R.id.btnConfigFiscal);
         btnVolverConfig = findViewById(R.id.btnVolverConfig);
 
-        // Configurar listeners
+
         btnCirculo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

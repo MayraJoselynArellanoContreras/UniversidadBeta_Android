@@ -41,9 +41,32 @@
         <activity
             android:name=".ActivityConfiguraciones"
             android:exported="false" />
-
+        <activity
+            android:name=".VoluntariosActivity"
+            android:exported="false" />
         <activity
             android:name=".EventosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CirculoDonadorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfigFiscalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DonativoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GarantiasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GestionDonadoresActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GestionCorporacionesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RepresentantesActivity"
             android:exported="false" />
 
     </application>

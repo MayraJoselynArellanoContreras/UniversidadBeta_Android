@@ -6,8 +6,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import controlers.*;
-import entities.*;
+import controlers.*;        // ← ESTO ES LO QUE FALTABA
+import entities.*;         // ← ESTO TAMBIÉN
 
 @Database(
         entities = {
@@ -26,14 +26,14 @@ import entities.*;
                 Usuarios.class,
                 Voluntario.class
         },
-        version = 1
+        version = 2,
+        exportSchema = false
 )
 public abstract class UniversidadBeta extends RoomDatabase {
 
-
     private static UniversidadBeta INSTANCE;
 
-    // === DAOS ===
+    // === TODOS TUS DAOs (uno por uno) ===
     public abstract AnioFiscalDAO anioFiscalDAO();
     public abstract CategoriaDonadorDAO categoriaDonadorDAO();
     public abstract CirculoDonadorDAO circuloDonadorDAO();
@@ -49,17 +49,17 @@ public abstract class UniversidadBeta extends RoomDatabase {
     public abstract UsuariosDAO usuariosDAO();
     public abstract VoluntarioDAO voluntarioDAO();
 
-    // === Singleton ===
     public static UniversidadBeta getAppDatabase(Context context) {
-
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(
-                    context.getApplicationContext(),
-                    UniversidadBeta.class,
-                    "UniversidadBeta"      // <- ✔ Aquí se cambia el nombre REAL de la BD
-            ).build();
+                            context.getApplicationContext(),
+                            UniversidadBeta.class,
+                            "UniversidadBeta"
+                    )
+                    .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
+                    .build();
         }
-
         return INSTANCE;
     }
 

@@ -69,7 +69,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.EventoVi
             txtTipo.setText(evento.getTipo());
             txtLugar.setText(evento.getLugar());
 
-            // Formatear el dinero
+
             DecimalFormat df = new DecimalFormat("$#,###.##");
             txtMeta.setText(df.format(evento.getMetaRecaudacion()));
 

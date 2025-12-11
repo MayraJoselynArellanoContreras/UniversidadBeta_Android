@@ -59,7 +59,7 @@ public class GestionPrincipalActivity extends AppCompatActivity {
         // Aquí abrirás la actividad de Donadores
         Toast.makeText(this, "Abriendo gestión de Donadores", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, DonadoresActivity.class);
+        Intent intent = new Intent(this, GestionDonadoresActivity.class);
         startActivity(intent);
     }
 
@@ -67,8 +67,8 @@ public class GestionPrincipalActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Abriendo gestión de Corporaciones", Toast.LENGTH_SHORT).show();
 
-        // Intent intent = new Intent(this, CorporacionesActivity.class);
-        // startActivity(intent);
+        Intent intent = new Intent(this, GestionCorporacionesActivity.class);
+        startActivity(intent);
 
     }
 
@@ -76,9 +76,9 @@ public class GestionPrincipalActivity extends AppCompatActivity {
         // Aquí abrirás la actividad de Representantes
         Toast.makeText(this, "Abriendo gestión de Representantes", Toast.LENGTH_SHORT).show();
 
-        // Descomentar cuando tengas la actividad de Representantes
-        // Intent intent = new Intent(this, RepresentantesActivity.class);
-        // startActivity(intent);
+
+        Intent intent = new Intent(this, RepresentantesActivity.class);
+        startActivity(intent);
 
         // Para probar:
         Toast.makeText(this, "Módulo Representantes - En desarrollo", Toast.LENGTH_LONG).show();

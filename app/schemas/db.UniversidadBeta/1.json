@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "334a8b9db2e6a8b5b61c7cdfa9b9233d",
+    "identityHash": "22355011f2e658ed3e1d9467fa16b801",
     "entities": [
       {
         "tableName": "AnioFiscal",
@@ -716,7 +716,7 @@
       },
       {
         "tableName": "Voluntario",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idVoluntario` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `email` TEXT, `telefono` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idVoluntario` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `email` TEXT, `telefono` TEXT, `direccion` TEXT, `fechaRegistro` TEXT, `estudiante` INTEGER NOT NULL, `activo` INTEGER NOT NULL, `observaciones` TEXT)",
         "fields": [
           {
             "fieldPath": "idVoluntario",
@@ -741,6 +741,36 @@
             "columnName": "telefono",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "direccion",
+            "columnName": "direccion",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fechaRegistro",
+            "columnName": "fechaRegistro",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "estudiante",
+            "columnName": "estudiante",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activo",
+            "columnName": "activo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "observaciones",
+            "columnName": "observaciones",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -756,7 +786,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '334a8b9db2e6a8b5b61c7cdfa9b9233d')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '22355011f2e658ed3e1d9467fa16b801')"
     ]
   }
 }

@@ -21,17 +21,15 @@ import controlers.EventoDAO;
 
 public class EventosActivity extends AppCompatActivity {
 
-    // 1. PRIMERO DECLARA TODAS LAS VARIABLES AQUÍ
     private EditText edtNombreEvento, edtFecha, edtLugar, edtMetaRecaudacion, edtDescripcion;
     private Spinner spnTipoEvento;
     private Button btnAgregar, btnEditar, btnEliminar, btnBuscar, btnLimpiar, btnVolver;
     private RecyclerView recyclerEventos;
 
-    // Variables para datos
     private int eventoSeleccionadoId = -1;
     private List<String> tiposEvento;
     private ArrayAdapter<String> spinnerAdapter;
-    private EventosAdapter eventosAdapter; // Esta es la clase interna
+    private EventosAdapter eventosAdapter;
 
     // Base de datos
     private UniversidadBeta db;
@@ -42,26 +40,23 @@ public class EventosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos);
 
-        // 1. Base de datos
+
         db = UniversidadBeta.getAppDatabase(this);
         eventoDAO = db.eventoDAO();
 
+        inicializarVistas();
 
-        // 2. PRIMERO inicializa TODAS las vistas
-        inicializarVistas();           // ← aquí se hace findViewById del Spinner
+        cargarTiposEvento();
 
-        // 3. AHORA SÍ puedes usar el Spinner
-        cargarTiposEvento();           // ← ahora spnTipoEvento ya existe
 
-        // 4. El resto
         cargarEventosDesdeBD();
         configurarListeners();
 
-        limpiarCampos();               // opcional, ya lo hace el botón limpiar
+        limpiarCampos();
     }
 
     private void inicializarVistas() {
-        // 1. TODOS LOS findViewById PRIMERO
+
         edtNombreEvento = findViewById(R.id.edtNombreEvento);
         edtFecha = findViewById(R.id.edtFecha);
         edtLugar = findViewById(R.id.edtLugar);
@@ -97,7 +92,7 @@ public class EventosActivity extends AppCompatActivity {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnTipoEvento.setAdapter(spinnerAdapter);
 
-        // Asegurar selección inicial
+
         spnTipoEvento.setSelection(0);
     }
 
@@ -272,7 +267,7 @@ public class EventosActivity extends AppCompatActivity {
     }
 
     private void limpiarCampos() {
-        // Usamos comprobaciones para que no explote si falta alguna vista
+
         if (edtNombreEvento != null) edtNombreEvento.setText("");
         if (edtFecha != null) edtFecha.setText("");
         if (edtLugar != null) edtLugar.setText("");
@@ -286,7 +281,7 @@ public class EventosActivity extends AppCompatActivity {
         if (btnEliminar != null) btnEliminar.setEnabled(false);
     }
 
-    // CLASE INTERNA DEL ADAPTER
+
     class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.EventoViewHolder> {
         private List<Evento> eventos;
 

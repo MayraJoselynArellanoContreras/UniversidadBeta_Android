@@ -18,22 +18,22 @@ public class ActividadesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_actividades); // Asegúrate que el XML se llama así
+        setContentView(R.layout.activity_actividades);
 
-        // Inicializar vistas
+
         toolbarActividades = findViewById(R.id.toolbar_actividades);
         btnEventosIngresar = findViewById(R.id.btnEventosIngresar);
         btnVoluntariosIngresar = findViewById(R.id.btnVoluntariosIngresar);
         btnVolverActividades = findViewById(R.id.btnVolverActividades);
 
-        // Configurar toolbar
+
         setSupportActionBar(toolbarActividades);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false); // Cambiar a true si quieres botón de retroceso
             getSupportActionBar().setTitle("Eventos y Actividades");
         }
 
-        // Configurar listeners
+
         btnEventosIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +65,7 @@ public class ActividadesActivity extends AppCompatActivity {
     }
 
     private void abrirVoluntarios() {
-        // Aquí puedes abrir la actividad de Voluntarios
+
         Toast.makeText(this, "Abriendo gestión de Voluntarios", Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, VoluntariosActivity.class);
@@ -73,10 +73,10 @@ public class ActividadesActivity extends AppCompatActivity {
     }
 
     private void volverMenuPrincipal() {
-        // Regresar al menú principal
+
         Intent intent = new Intent(this, MenuPrincipalActivity.class);
         startActivity(intent);
-        finish(); // Opcional: cierra esta actividad
+        finish();
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 

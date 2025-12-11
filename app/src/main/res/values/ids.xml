@@ -12,4 +12,7 @@
     <item name="edtLugar" type="id" />
     <item name="edtFecha" type="id" />
     <item name="edtNombreEvento" type="id" />
+    <item name="recyclerViewPagos" type="id" />
+    <item name="tvDonativoId" type="id" />
+    <item name="txtGeneracionItem" type="id" />
 </resources>

@@ -2,4 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green">#4CAF50</color>
+    <color name="blue">#2196F3</color>
+    <color name="red">#F44336</color>
+    <color name="gray_light">#F5F5F5</color>
+
+    <!-- Colores específicos del diseño original -->
+    <color name="button_green_light">#CCFF99</color>  <!-- Verde claro del botón Buscar -->
+    <color name="button_green_dark">#66CC00</color>   <!-- Verde oscuro del botón Volver -->
+
+    <!-- Colores para textos -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+
+    <!-- Colores de fondo -->
+    <color name="background_primary">#00CCCC</color>
+    <color name="background_white">#FFFFFF</color>
 </resources>
