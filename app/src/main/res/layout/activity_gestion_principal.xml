@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#34495E">
+
+    <!-- Encabezado azul -->
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GESTIÓN PRINCIPAL"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="#5DADE2"
+        android:elevation="6dp" />
+
+    <!-- Espaciado -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="28dp"/>
+
+    <!-- Botón Donadores -->
+    <Button
+        android:id="@+id/btnDonadores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Donadores"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:background="#1ABC9C"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botón Corporaciones -->
+    <Button
+        android:id="@+id/btnCorporaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Corporaciones"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:background="#9B59B6"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botón Representantes -->
+    <Button
+        android:id="@+id/btnRepresentantes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Representantes"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:background="#E67E22"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Botón Volver -->
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:textAllCaps="false"
+        android:padding="10dp"
+        android:background="#95A5A6"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

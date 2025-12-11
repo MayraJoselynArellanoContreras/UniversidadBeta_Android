@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F7FB">
+
+    <!-- El resto de tu código se mantiene igual -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="16dp">
+
+<!-- Toolbar -->
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar_actividades"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="#03A9F4"
+    android:title="Eventos y Actividades"
+    android:titleTextColor="#FFFFFF" />
+
+<!-- Card: Eventos -->
+<androidx.cardview.widget.CardView
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvEventosTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eventos"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear / ver eventos programados"
+            android:layout_marginTop="6dp"
+            android:textColor="#555555"/>
+
+        <Button
+            android:id="@+id/btnEventosIngresar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresar"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+<!-- Card: Voluntarios -->
+<androidx.cardview.widget.CardView
+    android:layout_marginTop="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvVoluntariosTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voluntarios"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gestiona la lista de voluntarios"
+            android:layout_marginTop="6dp"
+            android:textColor="#555555"/>
+
+        <Button
+            android:id="@+id/btnVoluntariosIngresar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresar"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+<!-- Volver -->
+<Button
+    android:id="@+id/btnVolverActividades"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Volver"
+    android:layout_marginTop="24dp"
+    android:backgroundTint="#FF9800"
+    android:textColor="#FFFFFF" />
+
+</LinearLayout>
+    </ScrollView>
