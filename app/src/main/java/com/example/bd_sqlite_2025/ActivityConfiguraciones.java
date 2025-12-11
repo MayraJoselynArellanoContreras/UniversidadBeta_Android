@@ -11,7 +11,7 @@ public class ActivityConfiguraciones extends AppCompatActivity {
 
     private Button btnCirculo;
     private Button btnConfigFiscal;
-    private Button btnReportes;
+
     private Button btnVolverConfig;
 
     @Override
@@ -22,7 +22,6 @@ public class ActivityConfiguraciones extends AppCompatActivity {
         // Inicializar botones
         btnCirculo = findViewById(R.id.btnCirculo);
         btnConfigFiscal = findViewById(R.id.btnConfigFiscal);
-        btnReportes = findViewById(R.id.btnReportes);
         btnVolverConfig = findViewById(R.id.btnVolverConfig);
 
         // Configurar listeners
@@ -40,12 +39,6 @@ public class ActivityConfiguraciones extends AppCompatActivity {
             }
         });
 
-        btnReportes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                abrirReportes();
-            }
-        });
 
         btnVolverConfig.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,9 +52,9 @@ public class ActivityConfiguraciones extends AppCompatActivity {
         // Aquí abrirás la actividad de Círculo Donador
         Toast.makeText(this, "Abriendo Círculo Donador", Toast.LENGTH_SHORT).show();
 
-        // Descomentar cuando tengas la actividad
-        // Intent intent = new Intent(this, CirculoDonadorActivity.class);
-        // startActivity(intent);
+
+        Intent intent = new Intent(this, CirculoDonadorActivity.class);
+        startActivity(intent);
 
     }
 
@@ -69,21 +62,13 @@ public class ActivityConfiguraciones extends AppCompatActivity {
         // Aquí abrirás la actividad de Configuración Fiscal
         Toast.makeText(this, "Abriendo Configuración Fiscal", Toast.LENGTH_SHORT).show();
 
-        // Descomentar cuando tengas la actividad
-        // Intent intent = new Intent(this, ConfigFiscalActivity.class);
-        // startActivity(intent);
+
+        Intent intent = new Intent(this, ConfigFiscalActivity.class);
+        startActivity(intent);
 
     }
 
-    private void abrirReportes() {
-        // Aquí abrirás la actividad de Reportes
-        Toast.makeText(this, "Abriendo Reportes", Toast.LENGTH_SHORT).show();
 
-        // Descomentar cuando tengas la actividad
-        // Intent intent = new Intent(this, ReportesActivity.class);
-        // startActivity(intent);
-
-    }
 
     private void volverMenuPrincipal() {
         // Regresar al menú principal
@@ -93,11 +78,6 @@ public class ActivityConfiguraciones extends AppCompatActivity {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
-    // Opcional: Manejar botón de retroceso físico
-    @Override
-    public void onBackPressed() {
-        volverMenuPrincipal();
-    }
 
 
 
